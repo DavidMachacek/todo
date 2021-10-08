@@ -6,10 +6,10 @@ FROM maven:3.6.0-jdk-11-slim AS builder
 #WORKDIR /app
 MAINTAINER  David Machacek <davido.machacek@gmail.com>
 # copy source inside container
-#COPY src src
-COPY /workspace/source/src src
-#COPY pom.xml .
-COPY /workspace/source/pom.xml .
+RUN pwd
+RUN ls
+COPY src src
+COPY pom.xml .
 # build, build, build!
 RUN mvn package
 
