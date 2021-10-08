@@ -11,7 +11,8 @@ RUN ls
 RUN ls /workspace/
 RUN ls /workspace/source/
 RUN mkdir -p /app
-COPY src /app/src
+RUN ls /app/
+COPY . /app/
 COPY pom.xml /app/pom.xml
 # build, build, build!
 RUN mvn package
