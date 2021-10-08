@@ -8,6 +8,9 @@ MAINTAINER  David Machacek <davido.machacek@gmail.com>
 # copy source inside container
 RUN pwd
 RUN ls
+RUN ls /workspace/
+RUN ls /workspace/source/
+RUN ls /workspace/source/src/
 COPY src src
 COPY pom.xml .
 # build, build, build!
