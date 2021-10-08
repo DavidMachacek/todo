@@ -2,16 +2,17 @@
 # Build stage
 #
 FROM maven:3.6.0-jdk-11-slim AS builder
-#WORKDIR /workspace/source
-WORKDIR /app
+#ORKDIR /workspace/source
+#WORKDIR /app
 MAINTAINER  David Machacek <davido.machacek@gmail.com>
 # copy source inside container
 RUN pwd
 RUN ls
 RUN ls /workspace/
 RUN ls /workspace/source/
-COPY /workspace/source/src /app/src
-COPY /workspace/source/src/pom.xml /app/pom.xml
+RUN mkdir -p /app
+COPY src /app/src
+COPY pom.xml /app/pom.xml
 # build, build, build!
 RUN mvn package
 
