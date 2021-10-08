@@ -2,7 +2,7 @@
 # Build stage
 #
 FROM maven:3.6.0-jdk-11-slim AS builder
-WORKDIR /app
+WORKDIR /workspace/source
 MAINTAINER  David Machacek <davido.machacek@gmail.com>
 # copy source inside container
 COPY src src
