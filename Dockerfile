@@ -12,7 +12,7 @@ RUN ls /workspace/
 RUN ls /workspace/source/
 RUN mkdir -p /app
 RUN ls /app/
-COPY . /app/
+COPY ../ /app/
 RUN ls /app/
 RUN pwd
 #COPY pom.xml /app/pom.xml
