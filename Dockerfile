@@ -3,7 +3,7 @@
 #
 FROM maven:3.6.0-jdk-11-slim AS builder
 #ORKDIR /workspace/source
-#WORKDIR /app
+WORKDIR /app
 MAINTAINER  David Machacek <davido.machacek@gmail.com>
 # copy source inside container
 RUN pwd
@@ -13,7 +13,9 @@ RUN ls /workspace/source/
 RUN mkdir -p /app
 RUN ls /app/
 COPY . /app/
-COPY pom.xml /app/pom.xml
+RUN ls /app/
+RUN pwd
+#COPY pom.xml /app/pom.xml
 # build, build, build!
 RUN mvn package
 
